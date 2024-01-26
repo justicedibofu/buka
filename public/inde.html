@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""> 
+    <title>The Restaurant</title>
+    <!-- Bootstrap core CSS -->
+<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="assets/main.css">
+
+
+    
+  </head>
+  <body>
+    
+<header>
+  <div class="collapse custom" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">About</h4>
+          <p class="text-white">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Follow on Twitter</a></li>
+            <li><a href="#" class="text-white">Like on Facebook</a></li>
+           
+          </ul>
+        </div>
+      </div>
+	  
+	  
+    </div>
+  </div>
+  <div class="navbar navbar-dark shadow-sm custom">
+    <div class="container">
+       
+     <a href="#" class="navbar-brand d-flex align-items-center">
+      <i class="fa fa-coffee"></i> &nbsp;&nbsp;
+        <strong>Restaurant</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- banner section -->
+  <section class="container-fluid p-0 m-0" style="background-image: url('assets/images/banner.jpg');height:200px; background-size: cover">
+    <div class="row" style="background-color: rgba(0,0,0,0.6); height:inherit" id="banner">
+      <div class="col"> 
+      	<h1 class="text-center text-light mt-4">Browse our Range of Mouth-Watering Menu</h1>
+      </div>
+    </div>
+  </section>
+<!-- end banner section -->
+
+  <div class="album py-5 bg-light">
+    <div class="container" id="shopnow">
+<div class="row">
+	  
+	<div class="col-md-12">
+		<!-- Categories of menu starts -->
+		<h5 class="mb-3 text-danger">CATEGORIES</h5>
+     
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3" id="shopnow">
+	  <!-- category item-->
+        <div class="col">
+		
+          <div class="card shadow-sm">
+           <img src="assets/images/meal.jpg" alt="" class="img-fluid">
+            <div class="card-body">
+              <p class="card-text">Italian Pizza</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="" class="btn btn-sm btn-danger">More Details</a>
+                 </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+       <!-- end category item-->
+		
+	 </div>
+
+	 <!-- Categories of menu ends -->
+	</div>
+</div>
+
+
+    </div>
+  </div>
+
+</main>
+<!-- footer starts -->
+<footer class="py-2 custom text-white">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#" class="text-white">Back to top</a>
+    </p>
+     <div class="row" id="footer">
+         <div class="col-6 col-md-4 mb-3">
+        <form>
+          <h5>About The Restaurant</h5>
+         <p>Online food ordering is the process of ordering food, for delivery or pickup, from a website or other application.</p>
+        </form>
+      </div>
+      <div class="col-12 col-md-6">
+        
+        <form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    
+  </div>
+  
+  
+  <button type="submit" class="btn btn-dark">Subscribe</button>
+</form>
+      </div>
+
+      
+     </div>
+     
+  </div>
+</footer>
+
+<!-- footer ends -->
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      
+
+      function ajaxCall(){
+        var url = "https://themealdb.com/api/json/v1/1/categories.php"
+
+        fetch(url)
+        .then(function(response){
+          return response.json();
+        })
+        .then(function(data){
+          console.log(`The data being received is ${data.categories}`)
+        }).catch(function(err){
+          console.log(err)
+        })
+      }
+
+      ajaxCall()
+    </script>
+  </body>
+</html>
